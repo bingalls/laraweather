@@ -1,0 +1,27 @@
+@import 'tailwindcss';
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source "../**/*.blade.php";
+@source "../**/*.js";
+@source "../**/*.vue";
+
+@theme {
+    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+        'Segoe UI Symbol', 'Noto Color Emoji';
+}
+
+/* tailwind colors for form validation */
+input:invalid ~ span::after {
+    color: oklch(57.7% 0.245 27.325) !important;
+    content: "✖";
+    padding-left: 5px;
+    position: absolute;
+}
+
+input:valid ~ span::after {
+    color: oklch(62.7% 0.194 149.214);
+    content: "✓";
+    padding-left: 5px;
+    position: absolute;
+}
